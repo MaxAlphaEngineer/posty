@@ -9,6 +9,15 @@ use Illuminate\Support\Facades\Hash;
 
 class RegisterController extends Controller
 {
+
+    /**
+     * RegisterController constructor.
+     */
+    public function __construct()
+    {
+        $this->middleware(['guest']);
+    }
+
     public function index(Request $request)
     {
         return view('auth.register');
